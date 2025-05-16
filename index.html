@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Our Website!</h1>
-    <p>We're glad to have you here.</p>
+  <div class="login-container">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form onsubmit="return validateForm()" method="POST">
+        <div class="textbox">
+          <input type="text" placeholder="Username" id="username" name="username" required>
+        </div>
+        <div class="textbox">
+          <input type="password" placeholder="Password" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="forgot-password">
+          <a href="#">Forgot Password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      // You can add JavaScript validation logic here
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      
+      if (username === "" || password === "") {
+        alert("Please fill in both fields.");
+        return false;
+      }
+      return true;
+    }
+  </script>
 </body>
 </html>
